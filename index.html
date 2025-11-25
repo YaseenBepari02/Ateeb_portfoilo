@@ -1,0 +1,1069 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ateeb Ahmed - VLSI & Embedded Systems Engineer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Enhanced Animations */
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-20px) rotate(2deg);
+            }
+        }
+
+        @keyframes gradient-shift {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        @keyframes pulse-glow {
+
+            0%,
+            100% {
+                box-shadow: 0 0 20px rgba(6, 182, 212, 0.5), 0 0 40px rgba(6, 182, 212, 0.2);
+            }
+
+            50% {
+                box-shadow: 0 0 40px rgba(6, 182, 212, 0.8), 0 0 80px rgba(6, 182, 212, 0.4);
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                transform: translateX(-100px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                transform: translateX(100px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                transform: translateY(30px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes shimmer {
+            0% {
+                background-position: -1000px 0;
+            }
+
+            100% {
+                background-position: 1000px 0;
+            }
+        }
+
+        @keyframes glow-pulse {
+
+            0%,
+            100% {
+                opacity: 0.6;
+            }
+
+            50% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes blob {
+
+            0%,
+            100% {
+                transform: translate(0, 0) scale(1);
+            }
+
+            25% {
+                transform: translate(20px, -50px) scale(1.1);
+            }
+
+            50% {
+                transform: translate(-20px, 20px) scale(0.9);
+            }
+
+            75% {
+                transform: translate(50px, 50px) scale(1.05);
+            }
+        }
+
+        @keyframes text-shimmer {
+            0% {
+                background-position: 200% center;
+            }
+
+            100% {
+                background-position: -200% center;
+            }
+        }
+
+        /* Utility Classes */
+        .float-animation {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(-45deg, #0f172a, #1e293b, #0c4a6e, #164e63);
+            background-size: 400% 400%;
+            animation: gradient-shift 15s ease infinite;
+        }
+
+        .pulse-glow {
+            animation: pulse-glow 2s ease-in-out infinite;
+        }
+
+        .slide-in-left {
+            animation: slideInLeft 0.6s ease-out forwards;
+        }
+
+        .slide-in-right {
+            animation: slideInRight 0.6s ease-out forwards;
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .card-hover:hover {
+            transform: translateY(-8px) scale(1.02);
+        }
+
+        .tech-badge {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tech-badge::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .tech-badge:hover::before {
+            left: 100%;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #06b6d4 0%, #3b82f6 50%, #8b5cf6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: text-shimmer 3s infinite;
+            background-size: 200% center;
+        }
+
+        .mesh-gradient {
+            background:
+                radial-gradient(at 40% 20%, rgba(6, 182, 212, 0.15) 0px, transparent 50%),
+                radial-gradient(at 80% 0%, rgba(59, 130, 246, 0.15) 0px, transparent 50%),
+                radial-gradient(at 0% 50%, rgba(139, 92, 246, 0.15) 0px, transparent 50%);
+        }
+
+        .glass-effect {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        .glass-effect-2 {
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(6, 182, 212, 0.1);
+        }
+
+        .nav-link {
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #06b6d4, #3b82f6);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+
+        .project-card-bg {
+            background: linear-gradient(135deg, rgba(30, 41, 59, 0.9) 0%, rgba(15, 23, 42, 0.9) 100%);
+        }
+
+        .skill-icon-container {
+            transition: all 0.3s ease;
+        }
+
+        .skill-icon-container:hover {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .typing-cursor::after {
+            content: '|';
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+
+            0%,
+            50% {
+                opacity: 1;
+            }
+
+            51%,
+            100% {
+                opacity: 0;
+            }
+        }
+
+        .scroll-indicator {
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(10px);
+            }
+        }
+
+        /* Enhanced Styles */
+        .section-divider {
+            position: relative;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(6, 182, 212, 0.5), transparent);
+        }
+
+        .card-glow {
+            box-shadow: 0 0 30px rgba(6, 182, 212, 0.1);
+            transition: box-shadow 0.3s ease;
+        }
+
+        .card-glow:hover {
+            box-shadow: 0 0 50px rgba(6, 182, 212, 0.3);
+        }
+
+        .skill-grid-item {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skill-grid-item::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(6, 182, 212, 0.1) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .skill-grid-item:hover::before {
+            opacity: 1;
+        }
+
+        .icon-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, rgba(6, 182, 212, 0.1), rgba(59, 130, 246, 0.1));
+            border: 1px solid rgba(6, 182, 212, 0.3);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .icon-badge:hover {
+            background: linear-gradient(135deg, rgba(6, 182, 212, 0.2), rgba(59, 130, 246, 0.2));
+            border-color: rgba(6, 182, 212, 0.6);
+            transform: translateY(-4px);
+        }
+
+        /* Timeline Enhanced */
+        .timeline-dot {
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            left: -29px;
+            top: 8px;
+            border: 3px solid rgba(6, 182, 212, 0.3);
+            box-shadow: 0 0 0 4px rgba(15, 23, 42, 1);
+            transition: all 0.3s ease;
+        }
+
+        .timeline-item:hover .timeline-dot {
+            transform: scale(1.5);
+            border-color: rgba(6, 182, 212, 0.8);
+            box-shadow: 0 0 20px rgba(6, 182, 212, 0.5), 0 0 0 4px rgba(15, 23, 42, 1);
+        }
+
+        /* Mobile Responsive Enhancements */
+        @media (max-width: 768px) {
+
+            .slide-in-left,
+            .slide-in-right {
+                animation-duration: 0.4s;
+            }
+
+            .gradient-text {
+                font-size: 2.25rem;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-slate-950 text-slate-200 overflow-x-hidden font-sans">
+    <div id="app"></div>
+
+    <script type="text/babel">
+        const { useState, useEffect, useRef } = React;
+
+        const Portfolio = () => {
+            const [isMenuOpen, setIsMenuOpen] = useState(false);
+            const [activeSection, setActiveSection] = useState('home');
+            const [scrolled, setScrolled] = useState(false);
+            const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+            const [animatedElements, setAnimatedElements] = useState(new Set());
+
+            useEffect(() => {
+                const handleScroll = () => {
+                    setScrolled(window.scrollY > 50);
+
+                    const sections = ['home', 'about', 'skills', 'projects', 'contact'];
+                    for (let section of sections) {
+                        const element = document.getElementById(section);
+                        if (element) {
+                            const rect = element.getBoundingClientRect();
+                            if (rect.top <= 100 && rect.bottom >= 100) {
+                                setActiveSection(section);
+                                break;
+                            }
+                        }
+                    }
+                };
+
+                const handleMouseMove = (e) => {
+                    setMousePosition({ x: e.clientX, y: e.clientY });
+                };
+
+                window.addEventListener('scroll', handleScroll);
+                window.addEventListener('mousemove', handleMouseMove);
+
+                return () => {
+                    window.removeEventListener('scroll', handleScroll);
+                    window.removeEventListener('mousemove', handleMouseMove);
+                };
+            }, []);
+
+            const scrollToSection = (id) => {
+                const element = document.getElementById(id);
+                if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                    setIsMenuOpen(false);
+                }
+            };
+
+            return (
+                <div className="relative">
+                    {/* Enhanced Animated Background */}
+                    <div className="fixed inset-0 gradient-bg -z-10" />
+                    <div className="fixed inset-0 mesh-gradient -z-10" />
+
+                    {/* Animated Blob Background Elements */}
+                    <div className="fixed top-1/4 right-1/4 w-80 h-80 bg-cyan-500/5 rounded-full blur-3xl pointer-events-none -z-10 float-animation" />
+                    <div className="fixed bottom-1/3 left-1/4 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl pointer-events-none -z-10 float-animation" style={{ animationDelay: '2s' }} />
+                    <div className="fixed top-1/2 right-1/3 w-72 h-72 bg-blue-500/5 rounded-full blur-3xl pointer-events-none -z-10 float-animation" style={{ animationDelay: '4s' }} />
+
+                    {/* Mouse Follower Glow */}
+                    <div
+                        className="fixed w-96 h-96 rounded-full pointer-events-none -z-10 transition-all duration-1000 ease-out"
+                        style={{
+                            left: `${mousePosition.x - 192}px`,
+                            top: `${mousePosition.y - 192}px`,
+                            background: `radial-gradient(circle, rgba(6, 182, 212, 0.08) 0%, transparent 70%)`,
+                        }}
+                    />
+
+                    {/* Navigation */}
+                    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'glass-effect shadow-lg border-b border-slate-700/50' : 'bg-transparent'}`}>
+                        <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+                            {/* Logo */}
+                            <div className="text-2xl font-bold text-white tracking-tighter flex items-center gap-2 slide-in-left">
+                                <svg className="w-8 h-8 text-cyan-400" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
+                                </svg>
+                                <span>ATEEB</span>
+                                <span className="text-cyan-400">.DEV</span>
+                            </div>
+
+                            {/* Desktop Navigation */}
+                            <div className="hidden md:flex items-center gap-8">
+                                {['Home', 'About', 'Skills', 'Projects', 'Contact'].map((item, idx) => (
+                                    <button
+                                        key={item}
+                                        onClick={() => scrollToSection(item.toLowerCase())}
+                                        className={`nav-link text-sm font-medium transition-colors ${activeSection === item.toLowerCase()
+                                            ? 'text-cyan-400 active'
+                                            : 'text-slate-300 hover:text-cyan-400'
+                                            }`}
+                                        style={{ animationDelay: `${idx * 0.1}s` }}
+                                    >
+                                        {item}
+                                    </button>
+                                ))}
+                            </div>
+
+                            {/* CTA Button */}
+                            <button className="hidden md:block px-6 py-2.5 bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white font-bold rounded-full transition-all transform hover:scale-105 shadow-lg shadow-cyan-500/50">
+                                Hire Me
+                            </button>
+
+                            {/* Mobile Menu Button */}
+                            <button
+                                className="md:hidden text-slate-300 hover:text-white transition-colors"
+                                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                            >
+                                {isMenuOpen ? (
+                                    <svg width="28" height="28" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                                    </svg>
+                                ) : (
+                                    <svg width="28" height="28" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                                    </svg>
+                                )}
+                            </button>
+                        </div>
+
+                        {/* Mobile Menu */}
+                        {isMenuOpen && (
+                            <div className="md:hidden glass-effect border-b border-slate-700/50 p-6 flex flex-col gap-4 shadow-2xl">
+                                {['Home', 'About', 'Skills', 'Projects', 'Contact'].map((item) => (
+                                    <button
+                                        key={item}
+                                        onClick={() => scrollToSection(item.toLowerCase())}
+                                        className={`text-left text-sm font-medium transition-colors ${activeSection === item.toLowerCase()
+                                            ? 'text-cyan-400'
+                                            : 'text-slate-300 hover:text-cyan-400'
+                                            }`}
+                                    >
+                                        {item}
+                                    </button>
+                                ))}
+                            </div>
+                        )}
+                    </nav>
+
+                    {/* Hero Section */}
+                    <section id="home" className="min-h-screen pt-32 pb-20 px-6 flex items-center relative overflow-hidden">
+                        {/* Floating Decorative Elements */}
+                        <div className="absolute top-14 right-14 w-72 h-72 bg-cyan-500/10 rounded-full blur-3xl float-animation" />
+                        <div className="absolute bottom-14 left-14 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl float-animation" style={{ animationDelay: '2s' }} />
+
+                        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center relative z-10">
+                            {/* Left Content */}
+                            <div className="space-y-6 slide-in-left">
+                                <div className="inline-block px-4 py-2 bg-cyan-500/10 text-cyan-400 text-sm font-semibold rounded-full border border-cyan-500/30 backdrop-blur-sm animate-pulse">
+                                    ✨ Available for Internships
+                                </div>
+
+                                <h1 className="text-5xl md:text-7xl font-bold text-white leading-tight">
+                                    Electronics <br />
+                                    <span className="gradient-text">VLSI Engineer</span>
+                                </h1>
+
+                                <p className="text-lg text-slate-400 max-w-xl leading-relaxed">
+                                    I design efficient digital circuits and embedded systems. Passionate about
+                                    <span className="text-cyan-400 font-semibold"> Digital IC Design</span>,
+                                    <span className="text-cyan-400 font-semibold"> RTL Development</span>, and
+                                    <span className="text-cyan-400 font-semibold"> Verification</span> with a strong foundation in EC.
+                                </p>
+
+                                <div className="flex flex-wrap gap-4 pt-4">
+                                    <button
+                                        onClick={() => scrollToSection('projects')}
+                                        className="px-8 py-3 bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white font-bold rounded-lg transition-all transform hover:scale-105 shadow-lg shadow-cyan-500/50 flex items-center gap-2 group"
+                                    >
+                                        <span>View Work</span>
+                                        <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                                        </svg>
+                                    </button>
+
+                                    <button className="px-8 py-3 glass-effect hover:bg-slate-700/70 text-white font-semibold rounded-lg transition-all border border-slate-600 hover:border-cyan-500/50 flex items-center gap-2 group">
+                                        <svg className="w-5 h-5 group-hover:translate-y-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                                        </svg>
+                                        Download Resume
+                                    </button>
+                                </div>
+                            </div>
+
+                            {/* Right Profile Card */}
+                            <div className="relative group slide-in-right">
+                                <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-500 rounded-2xl blur-xl opacity-30 group-hover:opacity-50 transition duration-1000 animate-pulse" />
+                                <div className="relative glass-effect-2 rounded-2xl p-8 border border-slate-700/50 hover:border-cyan-500/50 transition-all duration-300">
+                                    <div className="w-40 h-40 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-full mb-6 overflow-hidden flex items-center justify-center mx-auto shadow-2xl shadow-cyan-500/50 pulse-glow">
+                                        <span className="text-5xl text-white font-bold">AS</span>
+                                    </div>
+
+                                    <h3 className="text-2xl font-bold text-white mb-2 text-center">Ateeb Ahmed M Shivalli</h3>
+                                    <p className="text-cyan-400 font-medium mb-6 text-center">B.E in Electronics & Communication</p>
+
+                                    <div className="grid grid-cols-2 gap-4 w-full text-sm">
+                                        <div className="bg-slate-900/70 p-4 rounded-lg border border-slate-700/50 hover:border-cyan-500/50 transition-all card-hover text-center">
+                                            <span className="block text-3xl font-bold gradient-text">8.5</span>
+                                            <span className="text-slate-400">Current CGPA</span>
+                                        </div>
+                                        <div className="bg-slate-900/70 p-4 rounded-lg border border-slate-700/50 hover:border-purple-500/50 transition-all card-hover text-center">
+                                            <span className="block text-3xl font-bold gradient-text">5</span>
+                                            <span className="text-slate-400">Major Projects</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Scroll Indicator */}
+                        <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 scroll-indicator">
+                            <svg className="w-6 h-6 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                            </svg>
+                        </div>
+                    </section>
+
+                    {/* Skills Section */}
+                    <section id="skills" className="py-20 px-6 relative">
+                        <div className="max-w-7xl mx-auto">
+                            <div className="mb-12 text-center fade-in-up">
+                                <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 relative inline-block">
+                                    Technical Arsenal
+                                    <span className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full" />
+                                </h2>
+                                <p className="text-slate-400 mt-6 max-w-2xl mx-auto text-lg">
+                                    My expertise spans across hardware description languages, embedded programming, and circuit simulation tools.
+                                </p>
+                            </div>
+
+                            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                                <SkillCard
+                                    icon={<svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" /></svg>}
+                                    title="VLSI Design"
+                                    color="cyan"
+                                    skills={['Verilog', 'VHDL', 'Digital Circuit Design', 'CMOS Logic', 'RTL Development']}
+                                />
+                                <SkillCard
+                                    icon={<svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" /></svg>}
+                                    title="Embedded Systems"
+                                    color="purple"
+                                    skills={['Embedded C', 'Assembly 8051', 'ARM Microcontrollers', 'Interfacing']}
+                                />
+                                <SkillCard
+                                    icon={<svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>}
+                                    title="Tools & Simulation"
+                                    color="green"
+                                    skills={['Cadence Tools', 'SPICE', 'Xilinx Vivado', 'MATLAB', 'Mission Planner']}
+                                />
+                                <SkillCard
+                                    icon={<svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" /></svg>}
+                                    title="Core Domains"
+                                    color="orange"
+                                    skills={['Signal Processing', 'Control Systems', 'Network Analysis', 'Analog Electronics']}
+                                />
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* About & Experience Section */}
+                    <section id="about" className="py-20 px-6 bg-slate-900/50">
+                        <div className="max-w-4xl mx-auto">
+                            <div className="mb-12 text-center fade-in-up">
+                                <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 relative inline-block">
+                                    Journey So Far
+                                    <span className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full" />
+                                </h2>
+                            </div>
+
+                            <div className="space-y-8">
+                                <TimelineItem
+                                    title="Embedded Systems Intern"
+                                    company="SystemTron Embedded Systems"
+                                    period="July 2025 - Aug 2025"
+                                    color="cyan"
+                                    items={[
+                                        'Completed 4-week internship focused on microcontrollers, sensors, and interfacing.',
+                                        'Worked on real-time embedded applications and hardware-software integration.',
+                                        'Awarded completion certificate CID STINP9940 recognized under AICTE.'
+                                    ]}
+                                />
+                                <TimelineItem
+                                    title="B.E in Electronics & Communication"
+                                    company="SDM College of Engineering"
+                                    period="2022 - 2026"
+                                    color="purple"
+                                    items={[
+                                        'Current CGPA 8.5 - Gaining strong fundamentals in Embedded Systems, Digital Design, and Analog Electronics.'
+                                    ]}
+                                />
+                                <TimelineItem
+                                    title="Pre-University (PUC-PCMB)"
+                                    company="Nehru Arts, Science & Commerce College"
+                                    period="2020 - 2022"
+                                    color="blue"
+                                    items={[
+                                        'CGPA 8.7'
+                                    ]}
+                                />
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* Projects Section */}
+                    <section id="projects" className="py-20 px-6 relative">
+                        <div className="max-w-7xl mx-auto">
+                            <div className="mb-12 text-center fade-in-up">
+                                <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 relative inline-block">
+                                    Featured Projects
+                                    <span className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full" />
+                                </h2>
+                                <p className="text-slate-400 mt-6 max-w-2xl mx-auto text-lg">
+                                    Showcasing practical applications of VLSI and Embedded Systems concepts.
+                                </p>
+                            </div>
+
+                            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                                <ProjectCard
+                                    title="Autonomous Quadcopter"
+                                    year="2024"
+                                    tech={['Arduipilot', 'Mission Planner', 'PID Control', 'Sensors']}
+                                    description="Developed a fully functional quadcopter using APM 2.8 flight controller. Configured PID parameters and flight modes (Stabilize, AltHold, Loiter) for stable flight and redundancy."
+                                    icon={<svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>}
+                                    gradient="from-yellow-500 to-orange-500"
+                                />
+                                <ProjectCard
+                                    title="Digital Logic using Transmission Gates"
+                                    year="2023"
+                                    tech={['CMOS Logic', 'SPICE', 'VLSI', 'Circuit Design']}
+                                    description="Designed combinational circuits using Transmission-Gate-based CMOS logic to reduce power/area. Validated Half Adder, Full Adder, and 4:1 Mux through SPICE simulations."
+                                    icon={<svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" /></svg>}
+                                    gradient="from-cyan-500 to-blue-500"
+                                />
+                                <ProjectCard
+                                    title="Motion Detection System"
+                                    year="2024"
+                                    tech={['Embedded C', 'Cadence', 'Sensors', 'Microcontrollers']}
+                                    description="Real-time motion detection system with high accuracy. Interfaced sensors with microcontrollers to trigger buzzer/LED alerts. Simulation and validation done in Cadence tools."
+                                    icon={<svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z" /></svg>}
+                                    gradient="from-red-500 to-pink-500"
+                                />
+                                <ProjectCard
+                                    title="Room Temperature Monitor"
+                                    year="2025"
+                                    tech={['Arduino', 'Sensors', 'LCD', 'Embedded C']}
+                                    description="Built a real-time temperature monitoring system during SystemTron internship. Interfaced temperature sensors to read environmental data and display live readings on an LCD."
+                                    icon={<svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg>}
+                                    gradient="from-orange-500 to-red-500"
+                                />
+                                <ProjectCard
+                                    title="Smart LED Control"
+                                    year="2025"
+                                    tech={['Arduino', 'GPIO', 'Embedded C', 'Hardware']}
+                                    description="Designed an interactive LED control system using push buttons. Implemented signal processing logic to control lighting states, demonstrating core embedded programming concepts."
+                                    icon={<svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" /></svg>}
+                                    gradient="from-green-500 to-emerald-500"
+                                />
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* Achievements Section */}
+                    <section className="py-20 px-6 bg-slate-900/50">
+                        <div className="max-w-5xl mx-auto">
+                            <div className="relative glass-effect-2 rounded-2xl p-8 md:p-12 border border-slate-700/50 hover:border-cyan-500/50 transition-all duration-300 group card-glow">
+                                <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-cyan-500/20 to-purple-500/20 rounded-full blur-3xl -mr-48 -mt-48 group-hover:scale-150 transition-transform duration-1000" />
+
+                                <div className="flex flex-col md:flex-row gap-8 items-start md:items-center justify-between relative z-10">
+                                    <div>
+                                        <h3 className="text-3xl font-bold text-white mb-6 flex items-center gap-3">
+                                            <svg className="w-8 h-8 text-yellow-400" fill="currentColor" viewBox="0 0 24 24">
+                                                <path d="M12 2L9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2z" />
+                                            </svg>
+                                            Achievements & Interests
+                                        </h3>
+
+                                        <ul className="space-y-3 text-slate-300 text-lg">
+                                            <li className="flex items-start gap-3">
+                                                <span className="w-2 h-2 rounded-full bg-cyan-500 mt-2 flex-shrink-0" />
+                                                Participated in strong <span className="text-white">Insignia '23</span> National Techno Fest Mathematics Quiz.
+                                            </li>
+                                            <li className="flex items-start gap-3">
+                                                <span className="w-2 h-2 rounded-full bg-purple-500 mt-2 flex-shrink-0" />
+                                                Hobbies: <span className="text-white">Chess, Carrom, Football, Reading</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                    <div className="flex gap-4">
+                                        <div className="glass-effect p-6 rounded-xl border border-slate-700/50 hover:border-purple-500/50 transition-all w-40 text-center card-hover">
+                                            <svg className="w-10 h-10 text-purple-400 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                                            </svg>
+                                            <span className="block text-sm text-slate-400">Continuous</span>
+                                            <span className="font-bold text-white text-lg">Learning</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* Contact Section */}
+                    <section id="contact" className="py-20 px-6 relative">
+                        <div className="max-w-4xl mx-auto text-center">
+                            <div className="mb-12 fade-in-up">
+                                <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 relative inline-block">
+                                    Get In Touch
+                                    <span className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full" />
+                                </h2>
+                                <p className="text-slate-400 mt-6 text-lg">
+                                    I am currently looking for internship opportunities in VLSI Design, Verification, or Embedded Systems.
+                                </p>
+                            </div>
+
+                            <div className="grid md:grid-cols-2 gap-4 mb-12">
+                                <ContactCard
+                                    href="mailto:ateebahmedshivalli@gmail.com"
+                                    icon={<svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>}
+                                    text="ateebahmedshivalli@gmail.com"
+                                    gradient="from-cyan-500 to-blue-500"
+                                />
+                                <ContactCard
+                                    href="tel:918660425789"
+                                    icon={<svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>}
+                                    text="91 8660425789"
+                                    gradient="from-purple-500 to-pink-500"
+                                />
+                            </div>
+
+                            <footer className="text-slate-500 text-sm pt-8 border-t border-slate-800">
+                                <p>2025 Ateeb Ahmed M Shivalli. Built with React + Tailwind CSS + ✨ Creativity</p>
+                            </footer>
+                        </div>
+                    </section>
+                </div>
+            );
+        };
+
+        const SkillCard = ({ icon, title, skills, color }) => {
+            const colorMap = {
+                cyan: 'hover:border-cyan-500/50 hover:shadow-cyan-500/20',
+                purple: 'hover:border-purple-500/50 hover:shadow-purple-500/20',
+                green: 'hover:border-green-500/50 hover:shadow-green-500/20',
+                orange: 'hover:border-orange-500/50 hover:shadow-orange-500/20',
+            };
+
+            const iconColorMap = {
+                cyan: 'text-cyan-400',
+                purple: 'text-purple-400',
+                green: 'text-green-400',
+                orange: 'text-orange-400',
+            };
+
+            return (
+                <div className={`glass-effect p-6 rounded-xl border border-slate-700/50 transition-all duration-300 ${colorMap[color]} shadow-xl card-hover fade-in-up skill-grid-item`}>
+                    <div className={`skill-icon-container bg-slate-900/70 w-16 h-16 rounded-xl flex items-center justify-center mb-6 ${iconColorMap[color]}`}>
+                        {icon}
+                    </div>
+                    <h3 className="text-xl font-bold text-white mb-4">{title}</h3>
+                    <div className="flex flex-wrap gap-2">
+                        {skills.map((skill, index) => (
+                            <span key={index} className="tech-badge px-3 py-1.5 bg-slate-700/50 text-slate-300 text-xs rounded-lg border border-slate-600/50 hover:border-cyan-500/50 transition-all cursor-default">
+                                {skill}
+                            </span>
+                        ))}
+                    </div>
+                </div>
+            );
+        };
+
+        const TimelineItem = ({ title, company, period, color, items }) => {
+            const colorMap = {
+                cyan: { dot: 'bg-cyan-500', badge: 'bg-cyan-500/10 text-cyan-400 border-cyan-500/30', bullet: 'text-cyan-500' },
+                purple: { dot: 'bg-purple-500', badge: 'bg-purple-500/10 text-purple-400 border-purple-500/30', bullet: 'text-purple-500' },
+                blue: { dot: 'bg-blue-500', badge: 'bg-blue-500/10 text-blue-400 border-blue-500/30', bullet: 'text-blue-500' },
+            };
+
+            return (
+                <div className="relative pl-10 border-l-2 border-slate-700/50 hover:border-slate-600 transition-colors pb-8 last:pb-0 fade-in-up group">
+                    <div className="timeline-dot" style={{ backgroundColor: colorMap[color].dot }} />
+                    <div className="glass-effect p-6 rounded-xl border border-slate-700/50 hover:border-slate-600 transition-all card-hover">
+                        <h3 className="text-2xl font-bold text-white mb-3">{title}</h3>
+                        <div className="flex flex-wrap items-center gap-3 mb-4">
+                            <span className={`px-3 py-1.5 rounded-lg text-sm font-semibold border ${colorMap[color].badge}`}>
+                                {company}
+                            </span>
+                            <span className="text-slate-500 text-sm">{period}</span>
+                        </div>
+                        <ul className="space-y-3 text-slate-300">
+                            {items.map((item, idx) => (
+                                <li key={idx} className="flex items-start gap-3">
+                                    <span className={`${colorMap[color].bullet} mt-1.5 text-lg`}>•</span>
+                                    <span>{item}</span>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                </div>
+            );
+        };
+
+        const ProjectCard = ({ title, description, tech, year, icon, gradient }) => {
+            return (
+                <div className="project-card-bg rounded-xl overflow-hidden border border-slate-700/50 hover:border-cyan-500/50 transition-all duration-300 shadow-xl card-hover group fade-in-up">
+                    <div className="p-6">
+                        <div className="flex justify-between items-start mb-6">
+                            <div className={`bg-gradient-to-r ${gradient} p-4 rounded-xl text-white shadow-lg transform group-hover:scale-110 transition-transform duration-300`}>
+                                {icon}
+                            </div>
+                            <span className="text-xs font-mono text-slate-500 border border-slate-700 px-3 py-1.5 rounded-lg bg-slate-900/50">
+                                {year}
+                            </span>
+                        </div>
+
+                        <h3 className="text-xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors">
+                            {title}
+                        </h3>
+                        <p className="text-slate-400 text-sm leading-relaxed mb-6">
+                            {description}
+                        </p>
+
+                        <div className="flex flex-wrap gap-2 pt-4 border-t border-slate-700/50">
+                            {tech.map((t, i) => (
+                                <span key={i} className="text-xs font-medium text-cyan-400 bg-cyan-500/10 px-2 py-1 rounded border border-cyan-500/20">
+                                    {t}
+                                </span>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            );
+        };
+
+        const ContactCard = ({ href, icon, text, gradient }) => {
+            return (
+                <a
+                    href={href}
+                    className="glass-effect p-6 rounded-xl border border-slate-700/50 hover:border-cyan-500/50 text-slate-300 hover:text-white transition-all duration-300 card-hover group flex items-center gap-4 shadow-xl"
+                >
+                    <div className={`bg-gradient-to-r ${gradient} p-3 rounded-lg text-white shadow-lg group-hover:scale-110 transition-transform`}>
+                        {icon}
+                    </div>
+                    <span className="font-medium text-sm md:text-base">{text}</span>
+                </a>
+            );
+        };
+
+        ReactDOM.render(<Portfolio />, document.getElementById('app'));
+    </script>
+
+    <script crossOrigin src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
+    <script crossOrigin src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</body>
+
+</html>
+</div>
+</section>
+</div>
+);
+};
+
+const SkillCard = ({ icon, title, skills, color }) => {
+const colorMap = {
+cyan: 'hover:border-cyan-500/50 hover:shadow-cyan-500/20',
+purple: 'hover:border-purple-500/50 hover:shadow-purple-500/20',
+green: 'hover:border-green-500/50 hover:shadow-green-500/20',
+orange: 'hover:border-orange-500/50 hover:shadow-orange-500/20',
+};
+
+const iconColorMap = {
+cyan: 'text-cyan-400',
+purple: 'text-purple-400',
+green: 'text-green-400',
+orange: 'text-orange-400',
+};
+
+return (
+<div className={`glass-effect p-6 rounded-xl border border-slate-700/50 transition-all duration-300 ${colorMap[color]}
+    shadow-xl card-hover fade-in-up skill-grid-item`}>
+    <div className={`skill-icon-container bg-slate-900/70 w-16 h-16 rounded-xl flex items-center justify-center mb-6
+        ${iconColorMap[color]}`}>
+        {icon}
+    </div>
+    <h3 className="text-xl font-bold text-white mb-4">{title}</h3>
+    <div className="flex flex-wrap gap-2">
+        {skills.map((skill, index) => (
+        <span key={index}
+            className="tech-badge px-3 py-1.5 bg-slate-700/50 text-slate-300 text-xs rounded-lg border border-slate-600/50 hover:border-cyan-500/50 transition-all cursor-default">
+            {skill}
+        </span>
+        ))}
+    </div>
+</div>
+);
+};
+
+const TimelineItem = ({ title, company, period, color, items }) => {
+const colorMap = {
+cyan: { dot: 'bg-cyan-500', badge: 'bg-cyan-500/10 text-cyan-400 border-cyan-500/30', bullet: 'text-cyan-500' },
+purple: { dot: 'bg-purple-500', badge: 'bg-purple-500/10 text-purple-400 border-purple-500/30', bullet:
+'text-purple-500' },
+blue: { dot: 'bg-blue-500', badge: 'bg-blue-500/10 text-blue-400 border-blue-500/30', bullet: 'text-blue-500' },
+};
+
+return (
+<div
+    className="relative pl-10 border-l-2 border-slate-700/50 hover:border-slate-600 transition-colors pb-8 last:pb-0 fade-in-up group">
+    <div className="timeline-dot" style={{ backgroundColor: colorMap[color].dot }} />
+    <div
+        className="glass-effect p-6 rounded-xl border border-slate-700/50 hover:border-slate-600 transition-all card-hover">
+        <h3 className="text-2xl font-bold text-white mb-3">{title}</h3>
+        <div className="flex flex-wrap items-center gap-3 mb-4">
+            <span className={`px-3 py-1.5 rounded-lg text-sm font-semibold border ${colorMap[color].badge}`}>
+                {company}
+            </span>
+            <span className="text-slate-500 text-sm">{period}</span>
+        </div>
+        <ul className="space-y-3 text-slate-300">
+            {items.map((item, idx) => (
+            <li key={idx} className="flex items-start gap-3">
+                <span className={`${colorMap[color].bullet} mt-1.5 text-lg`}>•</span>
+                <span>{item}</span>
+            </li>
+            ))}
+        </ul>
+    </div>
+</div>
+);
+};
+
+const ProjectCard = ({ title, description, tech, year, icon, gradient }) => {
+return (
+<div
+    className="project-card-bg rounded-xl overflow-hidden border border-slate-700/50 hover:border-cyan-500/50 transition-all duration-300 shadow-xl card-hover group fade-in-up">
+    <div className="p-6">
+        <div className="flex justify-between items-start mb-6">
+            <div className={`bg-gradient-to-r ${gradient} p-4 rounded-xl text-white shadow-lg transform
+                group-hover:scale-110 transition-transform duration-300`}>
+                {icon}
+            </div>
+            <span
+                className="text-xs font-mono text-slate-500 border border-slate-700 px-3 py-1.5 rounded-lg bg-slate-900/50">
+                {year}
+            </span>
+        </div>
+
+        <h3 className="text-xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors">
+            {title}
+        </h3>
+        <p className="text-slate-400 text-sm leading-relaxed mb-6">
+            {description}
+        </p>
+
+        <div className="flex flex-wrap gap-2 pt-4 border-t border-slate-700/50">
+            {tech.map((t, i) => (
+            <span key={i}
+                className="text-xs font-medium text-cyan-400 bg-cyan-500/10 px-2 py-1 rounded border border-cyan-500/20">
+                {t}
+            </span>
+            ))}
+        </div>
+    </div>
+</div>
+);
+};
+
+const ContactCard = ({ href, icon, text, gradient }) => {
+return (
+<a href={href}
+    className="glass-effect p-6 rounded-xl border border-slate-700/50 hover:border-cyan-500/50 text-slate-300 hover:text-white transition-all duration-300 card-hover group flex items-center gap-4 shadow-xl">
+    <div className={`bg-gradient-to-r ${gradient} p-3 rounded-lg text-white shadow-lg group-hover:scale-110
+        transition-transform`}>
+        {icon}
+    </div>
+    <span className="font-medium text-sm md:text-base">{text}</span>
+</a>
+);
+};
+
+ReactDOM.render(
+<Portfolio />, document.getElementById('app'));
+</script>
+
+<script crossOrigin src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
+<script crossOrigin src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</body>
+
+</html>
